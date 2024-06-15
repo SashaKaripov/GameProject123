@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <utility>
@@ -32,7 +32,7 @@ int main(){
 	(*hell).txtr.loadFromImage((*hell).img);
 	(*hell).copysprt.setTexture((*hell).txtr);
 	(*hell).mainsprt.setTexture((*hell).txtr);
-	//спрайт оружия
+	//СЃРїСЂР°Р№С‚ РѕСЂСѓР¶РёСЏ
 	SpriteOfObj *case1 = new SpriteOfObj, *case2 = new SpriteOfObj,
 				*case3 = new SpriteOfObj, *case4 = new SpriteOfObj,
 				*case5 = new SpriteOfObj, *case6 = new SpriteOfObj;
@@ -99,7 +99,7 @@ int main(){
 	short caseInMenu{};
 	std::wstring map{};
 	sf::RenderWindow win(sf::VideoMode(ScreenWidth, ScreenHeight),
-						 L"ТестикХD", sf::Style::Fullscreen);
+						 L"РўРµСЃС‚РёРєРҐD", sf::Style::Fullscreen);
 	while (true){
 		std::wstring map_1{};
 		map_1 += L"#$#$#$#$$$#$#$##";
@@ -170,10 +170,10 @@ int main(){
 		short counterOfHealthBar = 0;
 
 		if (tomenu){
-			caseInMenu = menu(win);// Вызов меню. В n записываем номер карты. 
-								   // Если выбрать play, то автоматически 
-								   // выберится 1 карта, а можно в select a map
-								   //  выбрать одну из трёх карт
+			caseInMenu = menu(win);// Р’С‹Р·РѕРІ РјРµРЅСЋ. Р’ n Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРјРµСЂ РєР°СЂС‚С‹. 
+								   // Р•СЃР»Рё РІС‹Р±СЂР°С‚СЊ play, С‚Рѕ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё 
+								   // РІС‹Р±РµСЂРёС‚СЃСЏ 1 РєР°СЂС‚Р°, Р° РјРѕР¶РЅРѕ РІ select a map
+								   //  РІС‹Р±СЂР°С‚СЊ РѕРґРЅСѓ РёР· С‚СЂС‘С… РєР°СЂС‚
 			if (caseInMenu == 4){
 				delete winchik, wall, hell, case1, case2, case3, case4,
 					   case5, case6, scope, mnstranim1, mnstranim2,
@@ -236,15 +236,15 @@ int main(){
 					return 0;
 				}
 			}
-			// Нам понадобится разница во времени для каждого кадра,
-			// чтобы рассчитать изменение
-			// к скоростям перемещения, чтобы обеспечить равномерное
-			// перемещение, как при трассировке лучей.
-			// является недетерминированным
+			// РќР°Рј РїРѕРЅР°РґРѕР±РёС‚СЃСЏ СЂР°Р·РЅРёС†Р° РІРѕ РІСЂРµРјРµРЅРё РґР»СЏ РєР°Р¶РґРѕРіРѕ РєР°РґСЂР°,
+			// С‡С‚РѕР±С‹ СЂР°СЃСЃС‡РёС‚Р°С‚СЊ РёР·РјРµРЅРµРЅРёРµ
+			// Рє СЃРєРѕСЂРѕСЃС‚СЏРј РїРµСЂРµРјРµС‰РµРЅРёСЏ, С‡С‚РѕР±С‹ РѕР±РµСЃРїРµС‡РёС‚СЊ СЂР°РІРЅРѕРјРµСЂРЅРѕРµ
+			// РїРµСЂРµРјРµС‰РµРЅРёРµ, РєР°Рє РїСЂРё С‚СЂР°СЃСЃРёСЂРѕРІРєРµ Р»СѓС‡РµР№.
+			// СЏРІР»СЏРµС‚СЃСЏ РЅРµРґРµС‚РµСЂРјРёРЅРёСЂРѕРІР°РЅРЅС‹Рј
 			tp2 = std::chrono::system_clock::now();
 			std::chrono::duration<float> elapsedTime = tp2 - tp1;
 			tp1 = tp2;
-			float fElapsedTime = elapsedTime.count(); // количество кадров
+			float fElapsedTime = elapsedTime.count(); // РєРѕР»РёС‡РµСЃС‚РІРѕ РєР°РґСЂРѕРІ
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) &&
 				counterOfAnimOfGun == 0 && !startCounterOfTimeShoot){
 				startCounterOfTimeShoot = true;
@@ -289,7 +289,7 @@ int main(){
 			float xPositionColumnForDraw = 0.0f;
 			win.clear(sf::Color(15, 15, 15));
 			float lenOfBoundariesOfWall = 0;
-			bool DrawingWall = false; // определена ли координаты ширины стены
+			bool DrawingWall = false; // РѕРїСЂРµРґРµР»РµРЅР° Р»Рё РєРѕРѕСЂРґРёРЅР°С‚С‹ С€РёСЂРёРЅС‹ СЃС‚РµРЅС‹
 			bool conditionForOnceWritePreviousSymbol = false;
 			float distOfPreviousSymbol = 0.0f;
 			std::wstring previousSymbol = L"";
@@ -297,14 +297,14 @@ int main(){
 			short fourNearestWalls[4]{ 0, 1, 2, 3 };
 			counterOfHeaven += 2.0f;
 			for (short x = 0; x < ScreenWidth; x += 4){
-				// Начало взаимствованного кода
-				// Для каждого столбца рассчитайте угол проекции луча в мировое пространство
+				// РќР°С‡Р°Р»Рѕ РІР·Р°РёРјСЃС‚РІРѕРІР°РЅРЅРѕРіРѕ РєРѕРґР°
+				// Р”Р»СЏ РєР°Р¶РґРѕРіРѕ СЃС‚РѕР»Р±С†Р° СЂР°СЃСЃС‡РёС‚Р°Р№С‚Рµ СѓРіРѕР» РїСЂРѕРµРєС†РёРё Р»СѓС‡Р° РІ РјРёСЂРѕРІРѕРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ
 				float RayAngle = (PlayerA - FOV / 2.0f) + ((float)x / (float)ScreenWidth) * FOV;
 				float StepSize = 0.05f;
 				float DistanceToWall = 0.0f;
 				bool HitWall = false;
 				bool Boundary = false;
-				float EyeX = sinf(RayAngle); // Единичный вектор для луча в пространстве игрока
+				float EyeX = sinf(RayAngle); // Р•РґРёРЅРёС‡РЅС‹Р№ РІРµРєС‚РѕСЂ РґР»СЏ Р»СѓС‡Р° РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ РёРіСЂРѕРєР°
 				float EyeY = cosf(RayAngle);
 				int TestX = 0;
 				int TestY = 0;
@@ -312,10 +312,10 @@ int main(){
 				int CornerY = 0;
 				Distance("Wall", HitWall, DistanceToWall, StepSize, TestX, TestY, PlayerX,
 						 PlayerY, EyeX, EyeY, MapWidth, MapHeight, map);
-				// Рассчитайте расстояние до потолка и пола
+				// Р Р°СЃСЃС‡РёС‚Р°Р№С‚Рµ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РґРѕ РїРѕС‚РѕР»РєР° Рё РїРѕР»Р°
 				float Ceiling = (float)ScreenHeight / 2.0f - (float)ScreenHeight / DistanceToWall;
 				float Floor = ScreenHeight - Ceiling;
-				// Конец взаимствованного кода
+				// РљРѕРЅРµС† РІР·Р°РёРјСЃС‚РІРѕРІР°РЅРЅРѕРіРѕ РєРѕРґР°
 				f_3(x, counterOfHeaven);
 				(*hell).copysprt = (*hell).mainsprt;
 				(*hell).copysprt.setPosition(x, 0);
@@ -345,7 +345,7 @@ int main(){
 						else
 						{
 							if (XboundarysOfObj[1] == 1000000000 && XboundarysOfObj[0] != 1000000000){
-								if (x > ScreenWidth - 9){ // этот if для последней стены
+								if (x > ScreenWidth - 9){ // СЌС‚РѕС‚ if РґР»СЏ РїРѕСЃР»РµРґРЅРµР№ СЃС‚РµРЅС‹
 									XboundarysOfObj[1] = x;
 									reset(XboundarysOfObj, DrawingWall, xPositionColumnForDraw,
 										  xPositionCuttingFromSpriteWall, ConditionWriteBeginningObj,
@@ -433,7 +433,7 @@ int main(){
 						}
 						(*wall).copysprt.setScale(((float)(lenOfBoundariesOfWall)) / 128.0f,
 												  (Floor - Ceiling) / 128.0f);
-						win.draw((*wall).copysprt); //вывожу полоску
+						win.draw((*wall).copysprt); //РІС‹РІРѕР¶Сѓ РїРѕР»РѕСЃРєСѓ
 						xPositionColumnForDraw += 4 * ((float)(lenOfBoundariesOfWall)) / 128.0f;
 						xPositionCuttingFromSpriteWall += 4;
 						x = (int)ceil(xPositionColumnForDraw);
@@ -461,12 +461,12 @@ int main(){
 					}
 				}
 			}
-			bool DrawingMonster = false; // определенs ли координаты монстра
+			bool DrawingMonster = false; // РѕРїСЂРµРґРµР»РµРЅs Р»Рё РєРѕРѕСЂРґРёРЅР°С‚С‹ РјРѕРЅСЃС‚СЂР°
 			float boundarys[2]{ 1000000000,1000000000 };
 			float xPositionCuttingFromSpriteMonster = 0.0f;
-			// Находим расстояние до монстра
+			// РќР°С…РѕРґРёРј СЂР°СЃСЃС‚РѕСЏРЅРёРµ РґРѕ РјРѕРЅСЃС‚СЂР°
 			for (short x = 0; x < ScreenWidth; x += 8){
-				// Начало взаимствованного кода
+				// РќР°С‡Р°Р»Рѕ РІР·Р°РёРјСЃС‚РІРѕРІР°РЅРЅРѕРіРѕ РєРѕРґР°
 				float RayAngle = (PlayerA - FOV / 2.0f) +
 					             ((float)x / (float)ScreenWidth) * FOV;
 				float StepSize = 0.05f;
@@ -474,15 +474,15 @@ int main(){
 				bool HitMonster = false;
 				int TestX = 0;
 				int TestY = 0;
-				float EyeX = sinf(RayAngle); // Единичный вектор для
-				float EyeY = cosf(RayAngle); // луча в пространстве игрока
+				float EyeX = sinf(RayAngle); // Р•РґРёРЅРёС‡РЅС‹Р№ РІРµРєС‚РѕСЂ РґР»СЏ
+				float EyeY = cosf(RayAngle); // Р»СѓС‡Р° РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ РёРіСЂРѕРєР°
 				Distance("Monster", HitMonster, DistanceToMonster, StepSize,
 					     TestX, TestY, PlayerX, PlayerY, EyeX, EyeY, MapWidth,
 					     MapHeight, map);
 				float Ceiling = (float)ScreenHeight / 2.0f -
 					            (float)ScreenHeight / DistanceToMonster;
 				float Floor = ScreenHeight - Ceiling;
-				// Конец взаимствованного кода
+				// РљРѕРЅРµС† РІР·Р°РёРјСЃС‚РІРѕРІР°РЅРЅРѕРіРѕ РєРѕРґР°
 				if (map[TestX * MapWidth + TestY] != L'.'){
 					if (!DrawingMonster){
 						if (!ConditionWriteBeginningObj){
@@ -564,7 +564,7 @@ int main(){
 						mnstrAnimx[(CounterAniMnstrx[numberOfMonster] / 5) %
 								   maxIndexSpraitMnstr[numberOfMonster]].
 						copysprt.setScale(((float)(lenOfBoundariesOfWall)) / 128.0f,
-										  (Floor - Ceiling) / 128.0f); // увеличиваем столбик
+										  (Floor - Ceiling) / 128.0f); // СѓРІРµР»РёС‡РёРІР°РµРј СЃС‚РѕР»Р±РёРє
 						win.draw(mnstrAnimx[(CounterAniMnstrx[numberOfMonster] / 5) %
 							                maxIndexSpraitMnstr[numberOfMonster]].copysprt);
 						xPositionColumnForDraw += 8 * ((float)(lenOfBoundariesOfWall)) / 128.0f;
@@ -582,9 +582,8 @@ int main(){
 			}
 			f_2(counterOfAnimOfGun, startCounterOfTimeShoot);
 			gunCases[counterOfAnimOfGun].copysprt.setScale(2, 2);
-			gunCases[counterOfAnimOfGun].copysprt.setPosition(400, ScreenHeight - 220 + 
-															       sin(PlayerX) * 3 + 
-																   cos(PlayerY) * 3);
+			gunCases[counterOfAnimOfGun].copysprt.
+			setPosition(400, ScreenHeight - 220 + sin(PlayerX) * 3 + cos(PlayerY) * 3);
 			win.draw(gunCases[counterOfAnimOfGun].copysprt);
 			(*scope).copysprt.setPosition(392, 292);
 			win.draw((*scope).copysprt);

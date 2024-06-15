@@ -1,4 +1,4 @@
-#ifndef GAME_MENU_H
+п»ї#ifndef GAME_MENU_H
 #define GAME_MENU_H
 
 #pragma once
@@ -72,7 +72,7 @@ int menu(sf::RenderWindow& window) {
             if (menuNum == 1) {
                 numberMap = 1;
                 return numberMap;
-            } // если нажали первую кнопку, то выходим из меню
+            } // РµСЃР»Рё РЅР°Р¶Р°Р»Рё РїРµСЂРІСѓСЋ РєРЅРѕРїРєСѓ, С‚Рѕ РІС‹С…РѕРґРёРј РёР· РјРµРЅСЋ
             if (menuNum == 2) {
                 isMenu2 = true;
                 while (isMenu2) {

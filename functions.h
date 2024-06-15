@@ -1,4 +1,4 @@
-#ifndef GAME_FUNCTIONS_H
+п»ї#ifndef GAME_FUNCTIONS_H
 #define GAME_FUNCTIONS_H
 
 #pragma once
@@ -52,7 +52,7 @@ void Distance(std::string subject, bool& Hit, float& DistanceTo,
 		DistanceTo += StepSize;
 		TestX = (int)ceil(PlayerX + EyeX * DistanceTo);
 		TestY = (int)ceil(PlayerY + EyeY * DistanceTo);
-		// Проверьте, находится ли луч за пределами поля зрения
+		// РџСЂРѕРІРµСЂСЊС‚Рµ, РЅР°С…РѕРґРёС‚СЃСЏ Р»Рё Р»СѓС‡ Р·Р° РїСЂРµРґРµР»Р°РјРё РїРѕР»СЏ Р·СЂРµРЅРёСЏ
 		if (TestX < 0 || TestX >= MapWidth || TestY < 0 || TestY >= MapHeight){
 			Hit = true;
 			if (subject == "Wall"){
@@ -61,8 +61,8 @@ void Distance(std::string subject, bool& Hit, float& DistanceTo,
 		}
 		else{
 			if (subject == "Wall"){
-				// Луч находится в пределах досягаемости, поэтому проверьте,
-				//  является ли ячейка луча блоком стены
+				// Р›СѓС‡ РЅР°С…РѕРґРёС‚СЃСЏ РІ РїСЂРµРґРµР»Р°С… РґРѕСЃСЏРіР°РµРјРѕСЃС‚Рё, РїРѕСЌС‚РѕРјСѓ РїСЂРѕРІРµСЂСЊС‚Рµ,
+				//  СЏРІР»СЏРµС‚СЃСЏ Р»Рё СЏС‡РµР№РєР° Р»СѓС‡Р° Р±Р»РѕРєРѕРј СЃС‚РµРЅС‹
 				if (map[TestX * MapWidth + TestY] == '#' ||
 					map[TestX * MapWidth + TestY] == '$'){
 					// Ray has hit wall
