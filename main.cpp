@@ -11,6 +11,10 @@
 #include "menu.h"
 #include "functions.h"
 
+/**
+ * This structure creactes a sprite of the object 
+ * 
+ */
 struct SpriteOfObj {
 	sf::Image img;
 	sf::Texture txtr;
